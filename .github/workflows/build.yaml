@@ -20,7 +20,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
       -
         name: Build Latest Skeleton Version
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
@@ -29,7 +29,7 @@ jobs:
             quay.io/acend/prometheus-training-spring-boot-example:skeleton-pr-${{ github.event.pull_request.number }}
       -
         name: Build Latest Solution Version
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           context: ./solution
           file: ./solution/Dockerfile
